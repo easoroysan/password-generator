@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./favicon-32x32.png" />
+  </head>
+  <body>
+    <header>
+      <h1>Password Generator</h1>
+    </header>
+    <div class="card">
+      <div class="card-body">
+        <form id="password-options-form">
+          <div>
+            <label for="length">Length (between 8 and 128):</label>
+            <input
+              type="number"
+              id="length"
+              min="8"
+              max="128"
+              value="8"
+              onclick="this.select()"
+            />
+          </div>
+
+          <span>At least one option below must be selected</span>
+
+          <div class="checkbox-line">
+            <input type="checkbox" id="lowerCase" value="lowerCase" />
+            <label for="lowerCase">Include Lower Case Letters</label>
+          </div>
+
+          <div class="checkbox-line">
+            <input type="checkbox" id="upperCase" value="upperCase" />
+            <label for="upperCase">Include Upper Case Letters</label>
+          </div>
+
+          <div class="checkbox-line">
+            <input type="checkbox" id="numerals" value="numerals" />
+            <label for="numerals">Include Numbers</label>
+          </div>
+
+          <div class="checkbox-line">
+            <input type="checkbox" id="symbols" value="symbols" />
+            <label for="symbols">Include Symbols</label>
+          </div>
+
+          <input
+            id="generate"
+            type="submit"
+            value="Generate Password"
+            class="btn"
+            disabled
+          />
+        </form>
+      </div>
+      <div class="card-footer">
+        <textarea
+          readonly
+          id="password"
+          placeholder="Your Secure Password"
+          aria-label="Generated Password"
+        ></textarea>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
